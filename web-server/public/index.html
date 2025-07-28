@@ -2,17 +2,31 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Codex Web Runner</title>
+  <title>Codex Web Conversation</title>
 </head>
 <body>
-  <h1>Run Codex</h1>
-  <form id="run-form">
-    <label>Repository URL:<br /><input type="text" id="repoUrl" /></label><br />
-    <label>Prompt:<br /><textarea id="prompt" rows="4" cols="50"></textarea></label><br />
-    <label>GitHub Token:<br /><input type="password" id="token" /></label><br />
-    <button type="submit">Run</button>
-  </form>
-  <pre id="result"></pre>
+  <h1>Codex Web Conversation</h1>
+
+  <div id="setup">
+    <h2>Setup</h2>
+    <form id="setup-form">
+      <label>Repository URL:<br /><input type="text" id="repoUrl" required /></label><br />
+      <label>Branch:<br /><input type="text" id="branch" value="main" required /></label><br />
+      <label>GitHub Token:<br /><input type="password" id="token" required /></label><br />
+      <button type="submit">Save</button>
+    </form>
+  </div>
+
+  <div id="conversation" style="display:none;">
+    <h2>Conversation</h2>
+    <div id="messages" style="white-space: pre-wrap;"></div>
+    <form id="prompt-form">
+      <textarea id="prompt" rows="3" cols="60"></textarea><br />
+      <button type="submit">Send</button>
+    </form>
+    <pre id="result"></pre>
+  </div>
+
   <script type="module" src="main.js"></script>
 </body>
 </html>

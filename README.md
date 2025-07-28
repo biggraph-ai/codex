@@ -283,7 +283,9 @@ pnpm install
 pnpm start
 ```
 
-Open <http://localhost:3000> and submit a repository URL, prompt and GitHub token. The server clones the repository, runs Codex, commits the result and opens a pull request.
+Open <http://localhost:3000> and enter your repository URL, branch and GitHub token once.
+After saving, you can send multiple prompts in the conversation UI.
+The server reuses the same clone and creates a pull request for each run.
 
 **Security note:** the server executes commands and uses your token for pushes. Only run it with repositories and credentials you trust.
 
