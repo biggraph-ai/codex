@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "express": "^5.1.0",
-    "@octokit/rest": "^20.0.0"
+    "@octokit/rest": "^20.0.0",
+    "google-auth-library": "^9.0.0",
+    "mongodb": "^6.5.0"
   }
 }

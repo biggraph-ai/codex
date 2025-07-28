@@ -275,7 +275,7 @@ Run Codex head-less in pipelines. Example GitHub Action step:
 ```
 ## Web server automation
 
-A minimal Express server lives in `web-server/`. Set `OPENAI_API_KEY` in your environment, then run:
+A minimal Express server lives in `web-server/`. Set `OPENAI_API_KEY` in your environment and provide `GOOGLE_CLIENT_ID` for OAuth along with an optional `MONGO_URL` (defaults to `mongodb://localhost:27017`). Then run:
 
 ```bash
 cd web-server
@@ -283,8 +283,8 @@ pnpm install
 pnpm start
 ```
 
-Open <http://localhost:3000> and enter your repository URL, branch and GitHub token once.
-After saving, you can send multiple prompts in the conversation UI.
+Open <http://localhost:3000>, sign in with your Google account and enter your repository URL, branch and GitHub token once.
+After saving, you can send multiple prompts in the conversation UI. Chat history for each `userId` and repository is persisted in the `codexdb` Mongo database.
 The server reuses the same clone and creates a pull request for each run.
 
 **Security note:** the server executes commands and uses your token for pushes. Only run it with repositories and credentials you trust.

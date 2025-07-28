@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <title>Codex Web Conversation</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
   <h1>Codex Web Conversation</h1>
 
-  <div id="setup">
+  <div id="login">
+    <div id="google-signin"></div>
+  </div>
+
+  <div id="setup" style="display:none;">
     <h2>Setup</h2>
     <form id="setup-form">
       <label>Repository URL:<br /><input type="text" id="repoUrl" required /></label><br />
       <label>Branch:<br /><input type="text" id="branch" value="main" required /></label><br />
       <label>GitHub Token:<br /><input type="password" id="token" required /></label><br />
-      <label>User ID:<br /><input type="text" id="userId" required /></label><br />
       <button type="submit">Save</button>
     </form>
   </div>
