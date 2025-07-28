@@ -289,6 +289,8 @@ The server reuses the same clone and creates a pull request for each run.
 
 **Security note:** the server executes commands and uses your token for pushes. Only run it with repositories and credentials you trust.
 
+For an example of running the CLI in per-user containers behind Nginx or Traefik, see [docs/per-user-containers.md](docs/per-user-containers.md).
+
 
 ## Model Context Protocol (MCP)
 
