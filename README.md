@@ -25,6 +25,7 @@ This is the home of the **Codex CLI**, which is a coding agent from OpenAI that 
 - [CLI reference](#cli-reference)
 - [Memory & project docs](#memory--project-docs)
 - [Non-interactive / CI mode](#non-interactive--ci-mode)
+- [Web server automation](#web-server-automation)
 - [Model Context Protocol (MCP)](#model-context-protocol-mcp)
 - [Tracing / verbose logging](#tracing--verbose-logging)
 - [Recipes](#recipes)
@@ -272,6 +273,20 @@ Run Codex head-less in pipelines. Example GitHub Action step:
     export OPENAI_API_KEY="${{ secrets.OPENAI_KEY }}"
     codex exec --full-auto "update CHANGELOG for next release"
 ```
+## Web server automation
+
+A minimal Express server lives in `web-server/`. Set `OPENAI_API_KEY` in your environment, then run:
+
+```bash
+cd web-server
+pnpm install
+pnpm start
+```
+
+Open <http://localhost:3000> and submit a repository URL, prompt and GitHub token. The server clones the repository, runs Codex, commits the result and opens a pull request.
+
+**Security note:** the server executes commands and uses your token for pushes. Only run it with repositories and credentials you trust.
+
 
 ## Model Context Protocol (MCP)
 
